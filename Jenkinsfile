@@ -12,11 +12,19 @@ pipeline{
           bash  /home/ec2-user/workspace/Django-pipeline/django/scripts/envsetup.sh 
             '''}
         }
-       
-         stage('Run Make migration'){
+        
+        stage('Run Make migration'){
        
       steps  {
             sh 'python /home/ec2-user/workspace/Django-pipeline/django/manage.py makemigrations pharma'
+            
+            }
+        }
+       
+         stage('Run Collectstatic'){
+       
+      steps  {
+            sh 'python /home/ec2-user/workspace/Django-pipeline/django/manage.py collectstatic'
             
             }
         }
