@@ -13,6 +13,23 @@ pipeline{
             '''}
         }
        
+         stage('Run Make migration'){
+       
+      steps  {
+            sh 'python /home/ec2-user/workspace/Django-pipeline/django/manage.py makemigrations pharma'
+            
+            }
+        }
+        
+         stage('Run python migration'){
+       
+      steps  {
+            sh 'python /home/ec2-user/workspace/Django-pipeline/django/manage.py migrate'
+            
+            }
+        }
+        
+        
         stage('Run python manage command'){
        
       steps  {
