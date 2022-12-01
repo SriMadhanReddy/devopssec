@@ -1,3 +1,4 @@
+from django.contrib.auth.views import LoginView, LogoutView
 from .models import Dealer
 from .models import Employee
 from .models import Customer
@@ -5,7 +6,6 @@ from .models import Medicine
 from .models import Purchase
 from django.shortcuts import render
 from django.db import IntegrityError
-
 
 
 def home(request):
