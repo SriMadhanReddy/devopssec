@@ -24,7 +24,7 @@ pipeline{
          stage('Run Collectstatic'){
        
       steps  {
-            sh 'python /home/ec2-user/workspace/Django-pipeline/django/manage.py collectstatic --noinput'
+            sh 'python /home/ec2-user/workspace/Django-pipeline/django/manage.py collectstatic'
             
             }
         }
