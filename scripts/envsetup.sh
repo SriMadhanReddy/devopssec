@@ -1,6 +1,6 @@
 
 
-pip install -r /home/ec2-user/workspace/Django-pipeline/django/requirements.txt
+pip install -r /home/ec2-user/workspace/Devops_pipeline/requirements.txt
 
 if [ -d "logs" ] 
 then
