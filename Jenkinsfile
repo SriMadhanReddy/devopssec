@@ -12,19 +12,11 @@ pipeline{
           bash  /home/ec2-user/workspace/Devops_pipeline/scripts/envsetup.sh 
             '''}
         }
-        
-        stage('Run Make migration'){
-       
-      steps  {
-            sh 'python /home/ec2-user/workspace/Devops_pipeline/manage.py makemigrations pharma'
-            
-            }
-        }
-        
+
          stage('Run python migration'){
        
       steps  {
-            sh 'python /home/ec2-user/workspace/Devops_pipeline/manage.py migrate'
+            sh 'python3 /home/ec2-user/workspace/Devops_pipeline/manage.py migrate'
             
             }
         }
@@ -33,7 +25,7 @@ pipeline{
         stage('Run python manage command'){
        
       steps  {
-            sh 'python /home/ec2-user/workspace/Devops_pipeline/manage.py runserver 0.0.0.0:8000'
+            sh 'python3 /home/ec2-user/workspace/Devops_pipeline/manage.py runserver 0.0.0.0:8000'
             
             }
         }
