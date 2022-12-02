@@ -8,15 +8,15 @@ pipeline{
        
       steps  {
             sh '''
-            chmod +x /home/ec2-user/workspace/Django-pipeline/django/scripts/envsetup.sh 
-          bash  /home/ec2-user/workspace/Django-pipeline/django/scripts/envsetup.sh 
+            chmod +x /home/ec2-user/workspace/Devops_pipeline/scripts/envsetup.sh 
+          bash  /home/ec2-user/workspace/Devops_pipeline/scripts/envsetup.sh 
             '''}
         }
         
         stage('Run Make migration'){
        
       steps  {
-            sh 'python /home/ec2-user/workspace/Django-pipeline/django/manage.py makemigrations pharma'
+            sh 'python /home/ec2-user/workspace/Devops_pipeline/manage.py makemigrations pharma'
             
             }
         }
@@ -24,7 +24,7 @@ pipeline{
          stage('Run python migration'){
        
       steps  {
-            sh 'python /home/ec2-user/workspace/Django-pipeline/django/manage.py migrate'
+            sh 'python /home/ec2-user/workspace/Devops_pipeline/manage.py migrate'
             
             }
         }
@@ -33,7 +33,7 @@ pipeline{
         stage('Run python manage command'){
        
       steps  {
-            sh 'python /home/ec2-user/workspace/Django-pipeline/django/manage.py runserver 0.0.0.0:8000'
+            sh 'python /home/ec2-user/workspace/Devops_pipeline/manage.py runserver 0.0.0.0:8000'
             
             }
         }
