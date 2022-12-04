@@ -2,7 +2,7 @@ pipeline{
     agent {label 'ec2_slavenode'}
     stages {
  
-        stage('Setup Python Virtual ENV'){
+        stage('Setup Environment'){
        
       steps  {
             sh '''
@@ -31,7 +31,7 @@ pipeline{
         stage('Deploy application'){
        
       steps  {
-            sh 'python3 /home/ec2-user/workspace/Devops_pipeline/manage.py runserver 0.0.0.0:8000'
+            sh 'python3 /home/ec2-user/workspace/Devops_pipeline/manage.py migrate'
             
             }
         }
