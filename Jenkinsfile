@@ -24,10 +24,11 @@ pipeline{
          stage('Run Static code Analysis'){
        
       steps  {
-            sh '/home/ec2-user/workspace/Devops_pipeline/scripts/codeanalysisis.sh'
-           
+            sh '''
+            chmod +x /home/ec2-user/workspace/Devops_pipeline/scripts/codeanalysisis.sh
+            bash  /home/ec2-user/workspace/Devops_pipeline/scripts/codeanalysisis.sh
+            '''}
             }
-        }
         
         stage('Run python manage command'){
        
